@@ -9,13 +9,13 @@
 		class="main-navigation-menu"
 		:class="{'nav-collapsed':isCollapse}"
 	>
-		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>Apps</span></div>
+		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>Menú principal</span></div>
 		<el-menu-item index="/dashboard">
-			<i class="mdi mdi-gauge"></i><span slot="title">Dashboard</span>
+			<i class="mdi mdi-gauge"></i><span slot="title">Inicio</span>
 		</el-menu-item>
 
 
-		<div class="el-menu-item-group__title"><span>Pages</span></div>
+		<!-- <div class="el-menu-item-group__title"><span>Pages</span></div>
 		<el-submenu index="authentication" popper-class="main-navigation-submenu">
 			<template slot="title">
 				<i class="mdi mdi-lock"></i><span>Authentication</span>
@@ -35,7 +35,7 @@
 		</el-menu-item>
 		<el-menu-item index="/404">
 			<i class="mdi mdi-alert-octagon"></i><span slot="title">404</span>
-		</el-menu-item>
+		</el-menu-item> -->
 
 	</el-menu>
 </template>

@@ -10,14 +10,35 @@
 					<div class="widget-header ph-20 pt-20">
 						<div class="flex justify-center align-center">
 							<div class="widget-icon-box mr-20 animated fadeInRight">
-								<i class="widget-icon mdi mdi-account-multiple accent-text fs-30"></i>
+								<i class="fal fa-sack-dollar fa-2x success-text p-10"></i>
 								<div class="badge-box">
-									<span class="badge"><i class="mdi mdi-trending-up success-text mr-10"></i><strong class="accent-text">16%</strong></span>
+									<!-- <span class="badge"><i class="mdi mdi-trending-neutral info-text mr-10"></i><strong class="success-text">0%</strong></span> -->
 								</div>
 							</div>
 							<div class="widget-info box grow text-truncate animated fadeInLeft">
-								<div class="o-050 widget-title text-truncate pt-5 pb-10">Clientes</div>
-								<h2 class="m-0 text-truncate">4,523</h2>
+								<div class="o-050 widget-title text-truncate pt-5 pb-10">Valor impuestos</div>
+								<h2 class="m-0 text-truncate">$ 50,000,000</h2>
+							</div>
+						</div>
+					</div>
+
+					<component :is="asyncComponent" :type="'bar'" :options='{ width: "100%", height: 80, fill: ["#56f19a"] }' :data="[6, 5, 4, 3, 5, 3, 4, 5, 6, 5, 4, 2, 3, 8, 7, 6, 5, 2, 1, 5].toString()"/>
+				</div>
+			</el-col>
+			<el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6">
+				<div class="card-base card-shadow--medium mb-30 widget small-widget" v-loading="!asyncComponent">
+
+					<div class="widget-header ph-20 pt-20">
+						<div class="flex justify-center align-center">
+							<div class="widget-icon-box mr-20 animated fadeInRight">
+								<i class="fal fa-file-invoice fa-2x accent-text p-10"></i>
+								<div class="badge-box">
+									<!-- <span class="badge"><i class="mdi mdi-trending-up success-text mr-10"></i><strong class="accent-text">16%</strong></span> -->
+								</div>
+							</div>
+							<div class="widget-info box grow text-truncate animated fadeInLeft">
+								<div class="o-050 widget-title text-truncate pt-5 pb-10">Número de masters</div>
+								<h2 class="m-0 text-truncate">188</h2>
 							</div>
 						</div>
 					</div>
@@ -31,14 +52,14 @@
 					<div class="widget-header ph-20 pt-20">
 						<div class="flex justify-center align-center">
 							<div class="widget-icon-box mr-20 animated fadeInRight">
-								<i class="widget-icon mdi mdi-eye accent-text fs-30"></i>
+								<i class="fal fa-files-medical fa-2x accent-text p-10"></i>
 								<div class="badge-box">
-									<span class="badge"><i class="mdi mdi-trending-up success-text mr-10"></i><strong class="accent-text">11%</strong></span>
+									<!-- <span class="badge"><i class="mdi mdi-trending-up success-text mr-10"></i><strong class="accent-text">11%</strong></span> -->
 								</div>
 							</div>
 							<div class="widget-info box grow text-truncate animated fadeInLeft">
-								<div class="o-050 widget-title text-truncate pt-5 pb-10">Views</div>
-								<h2 class="m-0 text-truncate">2,523</h2>
+								<div class="o-050 widget-title text-truncate pt-5 pb-10">Número de hijas</div>
+								<h2 class="m-0 text-truncate">12,523</h2>
 							</div>
 						</div>
 					</div>
@@ -52,50 +73,60 @@
 					<div class="widget-header ph-20 pt-20">
 						<div class="flex justify-center align-center">
 							<div class="widget-icon-box mr-20 animated fadeInRight">
-								<i class="widget-icon mdi mdi-account-convert success-text fs-30"></i>
+								<i class="fal fa-usd-circle fa-2x success-text p-10"></i>
 								<div class="badge-box">
-									<span class="badge"><i class="mdi mdi-trending-neutral info-text mr-10"></i><strong class="success-text">1%</strong></span>
+									<!-- <span class="badge"><i class="mdi mdi-trending-neutral info-text mr-10"></i><strong class="success-text">1%</strong></span> -->
 								</div>
 							</div>
 							<div class="widget-info box grow text-truncate animated fadeInLeft">
-								<div class="o-050 widget-title text-truncate pt-5 pb-10">Conversion</div>
-								<h2 class="m-0 text-truncate">9,832</h2>
+								<div class="o-050 widget-title text-truncate pt-5 pb-10">TRM</div>
+								<h2 class="m-0 text-truncate">$ 3,832</h2>
 							</div>
 						</div>
 					</div>
 
-					<component :is="asyncComponent" :type="'line'" :options='{ width: "100%", height: 80, fill: "#56f19a", stroke: "#67C23A" }' :data="[10, 7, 8, 5, 4, 9, 3, 4, 6, 5, 4, 4, 2, 4, 5, 9, 13, 12, 12, 14].toString()"/>
+					<component :is="asyncComponent" :type="'line'" :options='{ width: "100%", height: 80, fill: "#56f19a", stroke: "#67C23A" }' :data="[10, 7, 8, 5, 4, 9, 3, 4, 6, 5, 4, 4].toString()"/>
 				</div>
 			</el-col>
-			<el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6">
-				<div class="card-base card-shadow--medium mb-30 widget small-widget" v-loading="!asyncComponent">
 
-					<div class="widget-header ph-20 pt-20">
-						<div class="flex justify-center align-center">
-							<div class="widget-icon-box mr-20 animated fadeInRight">
-								<i class="widget-icon mdi mdi-cash-multiple success-text fs-30"></i>
-								<div class="badge-box">
-									<span class="badge"><i class="mdi mdi-trending-neutral info-text mr-10"></i><strong class="success-text">0%</strong></span>
-								</div>
-							</div>
-							<div class="widget-info box grow text-truncate animated fadeInLeft">
-								<div class="o-050 widget-title text-truncate pt-5 pb-10">Revenue</div>
-								<h2 class="m-0 text-truncate">6,364</h2>
-							</div>
-						</div>
-					</div>
-
-					<component :is="asyncComponent" :type="'bar'" :options='{ width: "100%", height: 80, fill: ["#56f19a"] }' :data="[6, 5, 4, 3, 5, 3, 4, 5, 6, 5, 4, 2, 3, 8, 7, 6, 5, 2, 1, 5].toString()"/>
-				</div>
-			</el-col>
 		</el-row>
 
 		<el-row class="mt-0" :gutter="30">
-			<el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-				<div class="card-base card-shadow--medium bg-accent p-20" style="height:400px" v-loading="!asyncChart1">
+			<el-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
+				<div class="card-base card-shadow--medium bg-accent p-20 mb-30" style="height:400px" v-loading="!asyncChart1">
 					<h1 class="white-text mv-0 animated fadeInDown">Statistics</h1>
 					<h3 class="mt-0 mb-40 white-text o-050 animated slideInUp">revenue</h3>
 					<div id="chart1" style="height:300px; width:100%"></div>
+				</div>
+			</el-col>
+			<el-col :xs="24" :sm="24" :md="24" :lg="7" :xl="7">
+				<div class="card-base card-shadow--medium p-20 mb-30" style="height:400px" v-loading="!asyncChart1">
+					<i class="fal fa-building fa-10x compani-icon"></i>
+					<h1 class="mv-0 animated fadeInDown ml-10">Compañia</h1>
+					<el-row :gutter="10">
+					  <el-col :span="4"><i class="fal fa-id-card-alt fa-2x accent-text p-10 mr-20"></i></el-col>
+					  <el-col :span="20"><div class="p-15 mr-20">805030045-1</div></el-col>
+					</el-row>
+					<el-row :gutter="10">
+					  <el-col :span="4"><i class="fal fa-warehouse-alt fa-2x accent-text p-10 mr-20"></i></el-col>
+					  <el-col :span="20"><div class="p-15 mr-20">JYG BUSINESS COURIER S.A</div></el-col>
+					</el-row>
+					<el-row :gutter="10">
+					  <el-col :span="4"><i class="fal fa-map-marked-alt fa-2x accent-text p-10 mr-20"></i></el-col>
+					  <el-col :span="20"><div class="p-15 mr-20">AVE 4 NTE #23-01</div></el-col>
+					</el-row>
+					<el-row :gutter="10">
+					  <el-col :span="4"><i class="fal fa-phone fa-2x accent-text p-10 mr-20"></i></el-col>
+					  <el-col :span="20"><div class="p-15 mr-20">6610591</div></el-col>
+					</el-row>
+					<el-row :gutter="10">
+					  <el-col :span="4"><i class="fal fa-map-marker-alt fa-2x accent-text p-10 mr-20"></i></el-col>
+					  <el-col :span="20"><div class="p-15 mr-20">CALI</div></el-col>
+					</el-row>
+					<el-row :gutter="10">
+					  <el-col :span="4"><i class="fal fa-globe-americas fa-2x accent-text p-10 mr-20"></i></el-col>
+					  <el-col :span="20"><div class="p-15 mr-20">COLOMBIA</div></el-col>
+					</el-row>
 				</div>
 			</el-col>
 		</el-row>
@@ -285,6 +316,13 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/scss/_variables';
 
+.compani-icon{
+	opacity: 0.05;
+  position: absolute;
+  right: 1.5%;
+  top: 50%;
+  font-size: 200px;
+}
 .widget {
 	height: 200px;
 	position: relative;

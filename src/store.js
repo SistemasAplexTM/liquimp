@@ -41,7 +41,7 @@ export default new Vuex.Store({
 				state.layout.viewAnimation = payload.viewAnimation
 		},
 		setLogin(state, payload) {
-			setToken('123')
+			setToken(payload)
 			state.logged = true
 		},
 		setLogout(state, payload) {

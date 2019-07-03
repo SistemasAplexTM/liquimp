@@ -6,6 +6,15 @@
 			</button>
 
 			<search class="hidden-xs-only"></search>
+	    <el-date-picker
+			size="small"
+	      v-model="daterange"
+	      type="daterange"
+	      range-separator="-"
+	      start-placeholder="Inico quincena"
+	      end-placeholder="Fin quincena"
+				class="ml-100 daterange">
+	    </el-date-picker>
 		</div>
 		<div class="box-right flex align-center pl-10">
 			<el-dropdown trigger="click" @command="onCommandLang">
@@ -61,7 +70,8 @@ export default {
 		return {
 			popoverWidth: 300,
 			fullscreen: false,
-			lang: 'us'
+			lang: 'us',
+			daterange: ''
 		}
 	},
 	methods: {
@@ -109,6 +119,23 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/scss/_variables';
 @import '../assets/scss/_mixins';
+.daterange{
+	opacity: 0.5;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	transition: all .5s;
+	.el-range-input{
+		background-color: transparent;
+	}
+}
+
+
+.daterange:hover{
+	opacity: 1;
+}
 
 .toolbar {
 	width: 100%;

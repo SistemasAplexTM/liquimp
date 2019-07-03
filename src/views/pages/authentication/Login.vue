@@ -2,39 +2,35 @@
 	<vue-scroll class="login-page align-vertical">
 		<div class="form-wrapper align-vertical-middle">
 			<div class="form-box card-base card-shadow--extraLarge">
-				<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
-				
+				<img class="image-logo" src="@/assets/images/logoL.png" alt="logo"/>
+
 				<float-label class="styled">
-					<input type="email" placeholder="E-mail">
+					<input type="email" placeholder="Correo" v-model="form.email">
 				</float-label>
 				<float-label class="styled">
-					<input type="password" placeholder="Password">
+					<input type="password" placeholder="Contraseña" v-model="form.password">
 				</float-label>
-				
+
 				<div class="flex">
-					<div class="box grow"><el-checkbox>Remember Me </el-checkbox></div>
-					<div class="box grow text-right"><router-link to="/dashboard">Forgot Password?</router-link></div>
+					<div class="box grow"><el-checkbox>Recordarme </el-checkbox></div>
+					<div class="box grow text-right"><router-link to="/dashboard">¿Olvidó su contraseña?</router-link></div>
 				</div>
 
-				<div class="flex text-center center pt-30 pb-10">			
-					<el-button plain size="small" @click="login" class="login-btn tada animated">
-						LOGIN
+				<div class="flex text-center center pt-30 pb-10">
+					<el-button plain size="small" @click="login" class="login-btn tada animated" :loading="loading">
+						Iniciar sesión
 					</el-button>
 				</div>
-
-				<div class="text-divider mv-10">or</div>
-
-				<div class="flex column center pt-10 pb-10">			
-					<el-button plain size="small" @click="login" class="social-btn google">
-						Log in with Google
-					</el-button>
-					<el-button plain size="small" @click="login" class="social-btn facebook">
-						Log in with Facebook
-					</el-button>
-				</div>
+				<el-alert
+					v-show="isLoged"
+					title="Inicio exitoso!"
+					description="Redireccionando..."
+					type="success"
+					show-icon>
+				</el-alert>
 
 				<div class="text-center signin-box pt-20">
-					Don't have an account? <a>Sign in</a>
+					¿No tiene cuenta? <a>Crear</a>
 				</div>
 			</div>
 		</div>
@@ -42,20 +38,36 @@
 </template>
 
 <script>
+import { login } from '@/api/auth'
+
 export default {
 	name: 'Login',
 	data() {
 		return {
 			form: {
-				email: '',
-				password: '',
-			}
+				email: 'admin@admin.com',
+				password: 'admin123',
+			},
+			loading: false,
+			isLoged: false
 		}
 	},
 	methods: {
 		login() {
-			this.$store.commit('setLogin')
-			this.$router.push('dashboard')
+			this.loading = true
+			login(this.form).then(({data}) => {
+				this.isLoged = true
+				this.$store.commit('setLogin', data.access_token)
+				let me = this
+				setTimeout(function () {
+					me.$router.push('dashboard')
+				}, 300);
+				this.loading = false
+			}).catch(error => {
+				console.log('error ', error);
+				this.loading = false
+				this.isLoged = false
+			})
 		}
 	}
 }
@@ -72,7 +84,7 @@ export default {
 	.form-wrapper {
 		width: 100%;
 	}
-	
+
 	.form-box {
 		width: 100%;
 		max-width: 340px;
@@ -88,7 +100,7 @@ export default {
 		}
 
 		.image-logo {
-			width: 80px;
+			width: 150px;
 			margin: 0px auto;
 			margin-bottom: 30px;
 			display: block;
