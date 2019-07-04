@@ -7,7 +7,7 @@
 
 			<search class="hidden-xs-only"></search>
 	    <el-date-picker
-			size="small"
+				size="small"
 	      v-model="daterange"
 	      type="daterange"
 	      range-separator="-"
@@ -42,7 +42,7 @@
 			<el-badge :is-dot="true" class="notification-icon-badge">
 				<el-button v-popover:popover icon="mdi mdi-bell" class="notification-icon"></el-button>
 			</el-badge>
-			<span class="username"><router-link to="/profile">Aurora Shenton</router-link></span>
+			<span class="username"><router-link to="/profile">Ramón Ocampo</router-link></span>
 			<el-dropdown trigger="click" @command="onCommand">
 				<span class="el-dropdown-link">
 					<img src="../assets/images/avatar.jpg" class="avatar" alt="avatar">

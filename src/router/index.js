@@ -10,10 +10,11 @@ import Login from '../views/pages/authentication/Login.vue'
 import Register from '../views/pages/authentication/Register.vue'
 import ForgotPassword from '../views/pages/authentication/ForgotPassword.vue'
 import NotFound from '../views/pages/NotFound.vue'
-import Invoice from '../views/pages/Invoice.vue'
 
 import layouts from '../layout'
 import store from '../store'
+
+import master from './modules/master'
 
 Vue.use(Router)
 
@@ -33,17 +34,7 @@ const router = new Router({
 				tags: ['app']
 			}
 		},
-		{
-			path: '/invoice',
-			name: 'invoice',
-			component: Invoice,
-			meta: {
-				auth: true,
-				layout: layouts.navLeft,
-				searchable: true,
-				tags: ['pages']
-			}
-		},
+		master,
 		{
 			path: '/login',
 			name: 'login',

@@ -22,7 +22,7 @@
 						</div>
 					</div>
 
-					<component :is="asyncComponent" :type="'bar'" :options='{ width: "100%", height: 80, fill: ["#56f19a"] }' :data="[6, 5, 4, 3, 5, 3, 4, 5, 6, 5, 4, 2, 3, 8, 7, 6, 5, 2, 1, 5].toString()"/>
+					<component :is="asyncComponent" :type="'bar'" :options='{ width: "100%", height: 80, fill: ["#56f19a"] }' :data="[6, 5, 4, 3, 8, 7, 6, 5, 2, 1, 5].toString()"/>
 				</div>
 			</el-col>
 			<el-col :xs="24" :sm="12" :md="12" :lg="6" :xl="6">
@@ -94,8 +94,8 @@
 		<el-row class="mt-0" :gutter="30">
 			<el-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
 				<div class="card-base card-shadow--medium bg-accent p-20 mb-30" style="height:400px" v-loading="!asyncChart1">
-					<h1 class="white-text mv-0 animated fadeInDown">Statistics</h1>
-					<h3 class="mt-0 mb-40 white-text o-050 animated slideInUp">revenue</h3>
+					<h1 class="white-text mv-0 animated fadeInDown">Estadisticas</h1>
+					<h3 class="mt-0 mb-40 white-text o-050 animated slideInUp"></h3>
 					<div id="chart1" style="height:300px; width:100%"></div>
 				</div>
 			</el-col>

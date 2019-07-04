@@ -9,9 +9,49 @@
 		class="main-navigation-menu"
 		:class="{'nav-collapsed':isCollapse}"
 	>
-		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>Menú principal</span></div>
+		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>Menú Principal</span></div>
 		<el-menu-item index="/dashboard">
-			<i class="mdi mdi-gauge"></i><span slot="title">Inicio</span>
+			<i class="fal fa-home"></i><span slot="title">Inicio</span>
+		</el-menu-item>
+		<el-menu-item index="/master">
+			<i class="fal fa-file-invoice-dollar"></i><span slot="title">Guias Master</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-book-spells"></i><span slot="title">Libro de Control</span>
+		</el-menu-item>
+
+		<div class="el-menu-item-group__title"><span>Informes</span></div>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-file-chart-line"></i><span slot="title">Resumen Master</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-file-contract"></i><span slot="title">Liquidación Detallada</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-boxes"></i><span slot="title">Mintic</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-shield-check"></i><span slot="title">CRC</span>
+		</el-menu-item>
+
+
+		<div class="el-menu-item-group__title"><span>DIAN</span></div>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-file-code"></i><span slot="title">XML 1166</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-file-code"></i><span slot="title">XML 1084</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-file-times"></i><span slot="title">Guía Abandono</span>
+		</el-menu-item>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-layer-plus"></i><span slot="title">Sticker de Pago</span>
+		</el-menu-item>
+
+		<div class="el-menu-item-group__title"><span>Soporte Liquimp</span></div>
+		<el-menu-item index="/liquidation">
+			<i class="fal fa-user-headset"></i><span slot="title">Soporte</span>
 		</el-menu-item>
 
 
@@ -94,13 +134,13 @@ export default {
 	display: none;
 }
 .el-submenu, .el-menu-item {
-	.mdi {
+	.fal {
 		vertical-align: middle;
 		margin-right: 5px;
 		display: inline-block;
 		width: 24px;
 		text-align: center;
-		font-size: 18px;
+		font-size: 16px;
 	}
 }
 </style>
