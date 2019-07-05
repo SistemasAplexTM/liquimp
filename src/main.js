@@ -45,6 +45,8 @@ import router from './router/'
 import store from './store'
 import i18n_messages from './i18n.json'
 
+import PageHeader from '@/core/pageHeader.vue'
+
 Vue.config.productionTip = false
 
 
@@ -84,6 +86,8 @@ Vue.component('l-map', Vue2Leaflet.LMap)
 Vue.component('l-marker', Vue2Leaflet.LMarker)
 Vue.component('l-tile-layer', Vue2Leaflet.LTileLayer)
 const i18n = new VueI18n({ locale: 'us', messages:i18n_messages })
+
+Vue.component('page-header', PageHeader)
 
 new Vue({
 	i18n,

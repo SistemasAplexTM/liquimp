@@ -1,13 +1,14 @@
 <template lang="html">
-  <router-view/>
+  <vue-scroll class="page-element-form">
+    <page-header :title="$route.meta"/>
+    Control
+  </vue-scroll>
 </template>
 
 <script>
 export default {
-  name: 'Master'
 }
 </script>
 
 <style lang="css" scoped>
-
 </style>

@@ -16,7 +16,7 @@
 		<el-menu-item index="/master">
 			<i class="fal fa-file-invoice-dollar"></i><span slot="title">Guias Master</span>
 		</el-menu-item>
-		<el-menu-item index="/liquidation">
+		<el-menu-item index="/master/controlbook">
 			<i class="fal fa-book-spells"></i><span slot="title">Libro de Control</span>
 		</el-menu-item>
 

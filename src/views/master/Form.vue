@@ -1,48 +1,88 @@
 <template lang="html">
-  <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
-    <el-form-item label="Activity name" prop="name">
-      <el-input v-model="ruleForm.name"></el-input>
+  <el-form :inline="true" :model="ruleForm" :rules="rules"
+  label-position="top" ref="ruleForm"
+  label-width="120px" class="" size="medium" autocomplete="off">
+    <el-form-item label="N° Master" prop="master" required>
+      <el-input v-model="ruleForm.master" placeholder="Número de Master"></el-input>
     </el-form-item>
-    <el-form-item label="Activity zone" prop="region">
-      <el-select v-model="ruleForm.region" placeholder="Activity zone">
-        <el-option label="Zone one" value="shanghai"></el-option>
-        <el-option label="Zone two" value="beijing"></el-option>
-      </el-select>
+    <el-form-item label="Fecha de liquidación" prop="liquidation_date" required>
+      <el-date-picker
+        v-model="ruleForm.liquidation_date"
+        type="date"
+        placeholder="Fecha de liquidación">
+      </el-date-picker>
     </el-form-item>
-    <el-form-item label="Activity time" required>
-      <el-col :span="11">
-        <el-form-item prop="date1">
-          <el-date-picker type="date" placeholder="Pick a date" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
-        </el-form-item>
-      </el-col>
-      <el-col class="line" :span="2">-</el-col>
-      <el-col :span="11">
-        <el-form-item prop="date2">
-          <el-time-picker placeholder="Pick a time" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
-        </el-form-item>
-      </el-col>
+    <el-form-item label="Fecha de Master" prop="master_date" required>
+      <el-date-picker
+        v-model="ruleForm.master_date"
+        type="date"
+        placeholder="Fecha de Master">
+      </el-date-picker>
     </el-form-item>
-    <el-form-item label="Instant delivery" prop="delivery">
-      <el-switch v-model="ruleForm.delivery"></el-switch>
+    <el-form-item label="Tasa" prop="master_rate" required>
+      <el-input-number
+        v-model="ruleForm.master_rate"
+        placeholder="$ 0.00"
+        :precision="2"
+        :step="0.1" controls-position="right">
+      </el-input-number>
     </el-form-item>
-    <el-form-item label="Activity type" prop="type">
-      <el-checkbox-group v-model="ruleForm.type">
-        <el-checkbox label="Online activities" name="type"></el-checkbox>
-        <el-checkbox label="Promotion activities" name="type"></el-checkbox>
-        <el-checkbox label="Offline activities" name="type"></el-checkbox>
-        <el-checkbox label="Simple brand exposure" name="type"></el-checkbox>
-      </el-checkbox-group>
+    <el-form-item label="Peso Global" prop="global_weight" required>
+      <el-input-number
+        v-model="ruleForm.global_weight"
+        placeholder="0.00"
+        :precision="2"
+        :step="0.1" controls-position="right">
+      </el-input-number>
     </el-form-item>
-    <el-form-item label="Resources" prop="resource">
-      <el-radio-group v-model="ruleForm.resource">
-        <el-radio label="Sponsorship"></el-radio>
-        <el-radio label="Venue"></el-radio>
-      </el-radio-group>
+    <el-form-item label="RATE" prop="rate" required>
+      <el-input-number
+        v-model="ruleForm.rate"
+        placeholder="$ 0.00"
+        :precision="2"
+        :step="0.1" controls-position="right">
+      </el-input-number>
     </el-form-item>
-    <el-form-item label="Activity form" prop="desc">
-      <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+    <el-form-item label="Total Guias Hijas" prop="master_daughters" required>
+      <el-input-number
+        v-model="ruleForm.master_daughters"
+        placeholder="0"
+        controls-position="right">
+      </el-input-number>
     </el-form-item>
-    <el-form-item>
+    <el-form-item label="N° Manifiesto" prop="manifest" required>
+      <el-input v-model="ruleForm.manifest" placeholder="Número de Manifiesto"></el-input>
+    </el-form-item>
+    <el-form-item label="Fecha de Manifiesto" prop="manifest_date" required>
+      <el-date-picker
+        v-model="ruleForm.manifest_date"
+        type="date"
+        placeholder="Fecha de Manifiesto">
+      </el-date-picker>
+    </el-form-item>
+
+    <el-form-item label="Sticker Declaración" prop="declaration_sticker">
+      <el-input v-model="ruleForm.declaration_sticker" placeholder="Sticker Declaración"></el-input>
+    </el-form-item>
+    <el-form-item label="Fecha de Declaración" prop="declaration_date">
+      <el-date-picker
+        v-model="ruleForm.declaration_date"
+        type="date"
+        placeholder="Fecha de Declaración">
+      </el-date-picker>
+    </el-form-item>
+
+    <el-form-item label="CIFT" prop="rate" required>
+      <el-input-number
+        v-model="ruleForm.rate"
+        placeholder="$ 0.00"
+        :precision="2"
+        :step="0.1" controls-position="right">
+      </el-input-number>
+    </el-form-item>
+
+
+    <el-form-item style="width: 100%;">
       <el-button type="primary" @click="submitForm('ruleForm')">Create</el-button>
       <el-button @click="resetForm('ruleForm')">Reset</el-button>
     </el-form-item>
@@ -54,7 +94,7 @@ export default {
   data() {
       return {
         ruleForm: {
-          name: '',
+          master: '',
           region: '',
           date1: '',
           date2: '',
